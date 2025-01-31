@@ -14,22 +14,36 @@ module.exports = {
         allowNull: false,
       },
       answer: {
-        type: Sequelize.TEXT,
+        type: Sequelize.TEXT("long"), // Supports rich-text content (WYSIWYG)
         allowNull: false,
       },
       question_hi: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING, // Hindi translation
+        allowNull: true,
+      },
+      answer_hi: {
+        type: Sequelize.TEXT("long"),
+        allowNull: true,
       },
       question_bn: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING, // Bengali translation
+        allowNull: true,
+      },
+      answer_bn: {
+        type: Sequelize.TEXT("long"),
+        allowNull: true,
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.literal(
+          "CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+        ),
       },
     });
   },
