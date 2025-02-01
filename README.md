@@ -36,7 +36,7 @@ This is a backend application for managing FAQs (Frequently Asked Questions). Th
 ### 1️⃣ Clone the Repository
 
 ```
-git clone https://github.com/your-repo/faq-management.git
+git clone https://github.com/znabhi/FAQsManagement.git
 cd faq-management
 ```
 

@@ -3,15 +3,11 @@ const app = express();
 const { PORT } = require("./config/serverConfig");
 const faqRoutes = require("./routers/faqRouter");
 const redis = require("ioredis");
-const { sequelize } = require("./models");
-
 const redisClient = new redis();
 
-// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
 app.use("/api/v1/faqs", faqRoutes);
 
 // Export the app for testing
