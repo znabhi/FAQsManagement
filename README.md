@@ -35,7 +35,7 @@ This is a backend application for managing FAQs (Frequently Asked Questions). Th
 - Node.js and npm installed
 - MySQL database running
 - Redis server installed and running
-- Docker
+- Docker (optional, if using Docker)
 
 ### 1️⃣ Clone the Repository
 
@@ -54,13 +54,6 @@ npm install
 
 ```
 PORT=3002
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=yourpassword
-DB_NAME=faq_management
-REDIS_HOST=localhost
-REDIS_PORT=6379
-GOOGLE_TRANSLATE_API_KEY=your_api_key
 ```
 
 ### 4️⃣ Set Up the Database
@@ -84,11 +77,15 @@ npm start
 GET localhost:3002/api/v1/faqs/
 ```
 
+![api get](images/api-get.png)
+
 ### 🌍 Get FAQs in a Specific Language
 
 ```
-GET localhost:3002/api/v1/faqs/?lang=hi
+GET localhost:3002/api/v1/faqs/?lang=bn
 ```
+
+![api lang](images/api-res-lang.png)
 
 ### ➕ Add a New FAQ
 
@@ -98,17 +95,23 @@ POST localhost:3002/api/v1/faqs/
 -d '{"question": "What is Node.js?", "answer": "It is a runtime environment."}'
 ```
 
+![api create](images/api-create.png)
+
 ### 🔄 Delete an FAQ
 
 ```
 DELETE localhost:3002/api/v1/faqs/{id}
 ```
 
+![api delete](images/api-delete.png)
+
 ### Running Tests
 
 ```
 npm test
 ```
+
+![api testing](images/test-case.png)
 
 ## Frontend Integration
 
@@ -125,3 +128,29 @@ The frontend includes:
 2. Ensure `editor.js` and `styles.css` are linked correctly.
 3. Adjust API URLs in `editor.js` if needed.
 4. Enjoy managing FAQs!
+
+### ✍️ WYSIWYG Editor Integration
+
+![Quill Editor](images/ui-create-faqs.png)
+
+### Editor Integration Filter
+
+![ui filter](images/ui-lang-filter.png)
+
+### 📌 API Response
+
+![get res](images/api-res.png)
+
+### 📌 API Example: Get FAQs in Bengali
+
+![res bn](images/api-res-lang.png)
+
+## Contributing
+
+Feel free to fork this repository, submit issues, and create pull requests. Contributions are always welcome!
+
+If you encounter any issues or have questions, please open an issue in the repository, and we'll be happy to assist.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
